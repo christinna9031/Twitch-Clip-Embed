@@ -1,31 +1,32 @@
-<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 </head>
-    <script>
-   let load = 0
-  function loadvideo(){
-    load = 1
-    if (load==0){
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const clip_id = urlParams.get('clipid')
-    document.getElementById("url").src = "https://clips.twitch.tv/embed?clip="+clip_id+"&parent=christinna9031.github.io&autoplay=true";}}
-</script>
+   
 <body style="background-color:black;" ">>
 <div id="iframe">
 <iframe
     id="url"
-    src="about:blank"
+    src="https://clips.twitch.tv"
     height="788"
     width="1400"
     frameborder="0"
     scrolling="no"
-    allowfullscreen="true"
-    onload="loadvideo()">
+    allowfullscreen="true">
 </iframe>
+
 </div>
+<script>
+    let load = 0
+    document.getElementById("url").addEventListener("load",loadvideo())
+   function loadvideo(){
+     load = 1
+     if (load==0){
+     const queryString = window.location.search;
+     const urlParams = new URLSearchParams(queryString);
+     const clip_id = urlParams.get('clipid')
+     document.getElementById("url").src = "https://clips.twitch.tv/embed?clip="+clip_id+"&parent=christinna9031.github.io&autoplay=true";}}
+ </script>
 </body>
 
 </html>
