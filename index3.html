@@ -3,8 +3,18 @@
 <head>
 <meta charset="UTF-8">
 </head>
+    <script>
+   let load = 0
+  function loadvideo(){
+    load = 1
+    if (load==0){
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const clip_id = urlParams.get('clipid')
+    document.getElementById("url").src = "https://clips.twitch.tv/embed?clip="+clip_id+"&parent=christinna9031.github.io&autoplay=true";}}
+</script>
 <body style="background-color:black;" ">>
-<div id=iframe>
+<div id="iframe">
 <iframe
     id="url"
     src="about:blank"
@@ -17,14 +27,5 @@
 </iframe>
 </div>
 </body>
-<script>
-   let load = 0
-  function loadvideo(){
-    load = 1
-    if (load==0){
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const clip_id = urlParams.get('clipid')
-    document.getElementById("url").src = "https://clips.twitch.tv/embed?clip="+clip_id+"&parent=christinna9031.github.io&autoplay=true";}}
-</script>
+
 </html>
