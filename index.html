@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-</head>
-<body style="background-color:black;">
-<div id=iframe>
-<iframe
-    id="url"
-    src="about:blank"
-    height="788"
-    width="1400"
-    frameborder="0"
-    controls=false
-    scrolling="no"
-    allowfullscreen=true>
-</iframe>
-</div>
-</body>
-<script>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body style="background-color: black">
+    <div id="iframe">
+      <iframe
+        id="url"
+        src="about:blank"
+        height="788"
+        width="1400"
+        frameborder="0"
+        controls="false"
+        scrolling="no"
+        allowfullscreen="true"
+      >
+      </iframe>
+    </div>
+  </body>
+  <script>
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const clip_id = urlParams.get('clipid')
-    console.log(url)
-    document.getElementById("url").src = "https://clips.twitch.tv/embed?clip="+clip_id+"&parent=christinna9031.github.io&autoplay=true&controls=false";
-</script>
+    const clip_id = urlParams.get("clipid");
+    console.log(url);
+    document.getElementById("url").src =
+      "https://clips.twitch.tv/embed?clip=" +
+      clip_id +
+      "&parent=christinna9031.github.io&autoplay=true&controls=false";
+  </script>
 </html>
