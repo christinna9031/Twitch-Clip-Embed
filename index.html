@@ -27,5 +27,16 @@
       "https://clips.twitch.tv/embed?clip=" +
       clip_id +
       "&parent=christinak.ca&autoplay=true&controls=false";
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const iframeDocument = document.getElementById('url').contentWindow.document;
+
+      iframeDocument.addEventListener('load', function() {
+        const startButton = iframeDocument.querySelector('[data-a-target="content-classification-gate-overlay-start-watching-button"]');
+        if (startButton) {
+          startButton.click();
+        }
+      });
+    });
   </script>
 </html>
